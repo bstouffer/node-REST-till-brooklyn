@@ -14,6 +14,9 @@
     "debug": "~0.7.4",
     "jade": "*",
     "mongodb": "*",
-    "mongoskin": "*"
+    "mongoskin": "*",
+    "ejs": "*",
+    "express-partials": "*",
+    "path": "*"
   }
 }
