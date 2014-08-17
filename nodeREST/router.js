@@ -10,12 +10,14 @@
  *      routes.setup(app);
  */
 
-var index = require('./routes/index');
+var toc = require('./routes/toc');
 var user = require('./routes/users');
 
 module.exports.setup = function( app ) {
-    app.get('/',               index.index);
-    app.get('/user',       user.getUserList);
-    app.post('/user/add',        user.addUser);
-    app.delete('/user/delete/:id', user.deleteUser);
+    app.get('/', toc.index);
+    app.get('/about', toc.about);
+    app.get('/contact', toc.contact);
+    app.get('/user', user.getUserList);
+    app.post('/user/add', user.addUser);
+    //app.delete('/user/delete/:id', user.deleteUser);
 };
