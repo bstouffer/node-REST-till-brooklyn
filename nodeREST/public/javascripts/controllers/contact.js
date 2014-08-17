@@ -1,0 +1,1 @@
+$("#navbar-item-contact").addClass("active");
