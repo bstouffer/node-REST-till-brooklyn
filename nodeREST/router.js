@@ -10,14 +10,24 @@
  *      routes.setup(app);
  */
 
-var toc = require('./routes/toc');
 var user = require('./routes/users');
 
 module.exports.setup = function( app ) {
-    app.get('/', toc.index);
-    app.get('/about', toc.about);
-    app.get('/contact', toc.contact);
+	bind(app, '/', 'index');
+	bind(app, '/about', 'about');
+	bind(app, '/contact', 'contact');
+	bind(app, '/oauth2callback', 'oauth2callback');
+    
     app.get('/user', user.getUserList);
     app.post('/user/add', user.addUser);
     //app.delete('/user/delete/:id', user.deleteUser);
 };
+
+//Bind route to view
+function bind(app, path, viewName) {
+	exports[viewName] = function(req, res) {
+		//res.render("test");
+		res.render(viewName + ".html"); 
+	};
+	app.get(path, exports[viewName]);
+}

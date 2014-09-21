@@ -17,6 +17,7 @@
     "mongoskin": "*",
     "ejs": "*",
     "express-partials": "*",
-    "path": "*"
+    "path": "*",
+    "googleapis": "*"
   }
 }
